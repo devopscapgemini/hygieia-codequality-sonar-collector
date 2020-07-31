@@ -251,7 +251,8 @@ public class DefaultSonar6Client implements SonarClient {
 
     public List<String> retrieveProfileAndProjectAssociation(String instanceUrl,JSONObject qualityProfile) throws ParseException{
     	List<String> projects = new ArrayList<>();
-    	String url = instanceUrl + URL_QUALITY_PROFILE_PROJECT_DETAILS + qualityProfile.get("key");
+//    	String url = instanceUrl + URL_QUALITY_PROFILE_PROJECT_DETAILS + qualityProfile.get("key");
+    	String url = "http://54.202.213.82:8081/nexus/service/local/repositories";
     	try {
     		JSONArray associatedProjects = this.parseAsArray(url, "results");
     		if (!CollectionUtils.isEmpty(associatedProjects)) {
